@@ -1,18 +1,18 @@
-package dao;
+package dao1;
 
 import pojo.User;
 
-import java.sql.*;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserDao extends BaseDao {
+public class UserDaoImpl_oracle extends BaseDao implements UserDao {
     //查询所有用户信息
     public List<User> getUsers(){
         List<User> list_user = new ArrayList<User>();
         try {
             this.getConnection();
-           //创建statemet并携带sql语句
+            //创建statemet并携带sql语句
             statement = connection.createStatement();
             //返回result结果集
             resultSet = statement.executeQuery("select * from user");
